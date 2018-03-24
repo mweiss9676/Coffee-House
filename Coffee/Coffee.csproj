@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -146,11 +152,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bean.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\aroma.jpg" />
+    <Content Include="Content\Images\beans-caffeine-coffee-2065.jpg" />
+    <Content Include="Content\Images\beans.jpg" />
+    <Content Include="Content\Images\beans3.jpg" />
+    <Content Include="Content\Images\beans4.jpg" />
+    <Content Include="Content\Images\beverage-cafe-caffeine-324028.jpg" />
+    <Content Include="Content\Images\beverage-caffeine-coffee-302894.jpg" />
+    <Content Include="Content\Images\mug.jpg" />
+    <Content Include="Content\Images\pexels-photo-585750.jpeg" />
+    <Content Include="Content\Images\pexels-photo-702251.jpeg" />
+    <Content Include="Content\Images\scoop.jpg" />
+    <Content Include="Content\Images\drip.jpg" />
+    <Content Include="Content\Images\machine.jpg" />
+    <Content Include="Content\Images\beans2.jpg" />
+    <Content Include="Content\Images\shop.jpg" />
+    <Content Include="Content\Images\shop2.jpg" />
+    <Content Include="Content\Images\shop3.jpg" />
+    <Content Include="Content\Script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -188,7 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
