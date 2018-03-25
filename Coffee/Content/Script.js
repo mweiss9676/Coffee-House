@@ -29,23 +29,23 @@ $(window).scroll(function () {
     let scrollPixels = parseInt($(window).scrollTop());
 
     if (scrollPixels > 150) {
-        $('#brand').text("CCC");
+        $('#brand').text("CCC.");
         $('header').css({
             height: '100px',
-            position: 'fixed',
+            //position: 'fixed',
             top: '0',
-            left: '0',
-            backgroundPosition: 'center 13%'
+            left: '0'
+            //backgroundPosition: 'center 13%'
         });
         $('#brand').addClass('title-flip');
     } else {
         $('#brand').text("CLEVELAND COFFEE CO.");
         $('header').css({
             height: 'inherit',
-            position: 'inherit',
+            //position: 'inherit',
             top: '0',
-            left: '0',
-            backgroundPosition: 'inherit'
+            left: '0'
+            //backgroundPosition: 'inherit'
         });
         $('#brand').removeClass('title-flip');
     }

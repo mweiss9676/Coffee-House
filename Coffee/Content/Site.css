@@ -123,14 +123,16 @@ div#mid-main.main.col-sm-4 {
     height: var(--header-height);
     background-image: url("Images/beans2RESIZE.jpg");
     background-size: cover;
-    position: relative;
+    position: fixed;
 }
 
 .title-flip#brand {
-    font-size: 10rem;
+    font-size: 11rem;
     transform: rotate(0deg);
     height: 100px;
     width: 200px;
+    position: absolute;
+    top: -10px;
 }
 
 .bean-background {
@@ -152,6 +154,7 @@ div#mid-main.main.col-sm-4 {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    margin-top: 350px !important;
 }
 
 .bean-info-box {
