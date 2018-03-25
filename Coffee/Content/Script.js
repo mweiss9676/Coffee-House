@@ -16,9 +16,6 @@ $(document).ready(() => {
         $(this).removeClass('transition');
         });
 
-    $('.bean-description-page').on('scroll', function () {
-        $('#brand').addClass('title-flip');
-    });
 });
 //$(document).ready(function () {
 //    $('.zoom').hover(function () {
@@ -27,3 +24,41 @@ $(document).ready(() => {
 //        $(this).removeClass('transition');
 //    });
 //});
+
+$(window).scroll(function () {
+    let scrollPixels = parseInt($(window).scrollTop());
+
+    if (scrollPixels > 150) {
+        $('#brand').text("CCC");
+        $('header').css({
+            height: '100px',
+            position: 'fixed',
+            top: '0',
+            left: '0',
+            backgroundPosition: 'center 13%'
+        });
+        $('#brand').addClass('title-flip');
+    } else {
+        $('#brand').text("CLEVELAND COFFEE CO.");
+        $('header').css({
+            height: 'inherit',
+            position: 'inherit',
+            top: '0',
+            left: '0',
+            backgroundPosition: 'inherit'
+        });
+        $('#brand').removeClass('title-flip');
+    }
+});
+
+
+//$("div#container").scroll(function () {
+//    var screenheight = parseInt($(document).height());
+//    var scrolledpx = parseInt($("div#container").scrollTop());
+//    var sum = screenheight + scrolledpx;
+//    console.log($("div#container").scrollTop());
+//    console.log("screen: " + screenheight);
+//    console.log("sum=" + sum);
+//    $("div.content").height(sum);
+//})
+

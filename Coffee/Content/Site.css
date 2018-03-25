@@ -11,7 +11,7 @@
 /*******************VARIABLES*************************/
 
 :root {
-    --header-height: 25vh;
+    --header-height: 240px;
     --font-color-main: rgba(255, 240, 219, .9);
     --color-coffee: #0D0402;
 }
@@ -28,19 +28,6 @@
 
     100% {
         background-position: right;
-    }
-}
-
-@keyframes flip-title {
-    0% {
-        /*writing-mode: inherit;*/
-        position: relative;
-        left: 0;
-    }
-    100% {
-        left: 200px;
-        /*writing-mode: horizontal-tb;
-        transform: rotate(0deg);*/
     }
 }
 
@@ -65,11 +52,11 @@ header {
     color: var(--font-color-main);
     font-size: 6rem;
     text-orientation: sideways;
-    writing-mode: vertical-rl;
+    width: var(--header-height);
     height: var(--header-height);
     top: 0;
     left: 1rem;
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
     text-transform: uppercase;
     font-family: "Anton", sans-serif;
     position: relative;
@@ -137,11 +124,13 @@ div#mid-main.main.col-sm-4 {
     background-image: url("Images/beans2RESIZE.jpg");
     background-size: cover;
     position: relative;
-    overflow-x: hidden;
 }
 
-.title-flip {
-    animation: flip-title;
+.title-flip#brand {
+    font-size: 10rem;
+    transform: rotate(0deg);
+    height: 100px;
+    width: 200px;
 }
 
 .bean-background {
@@ -189,7 +178,7 @@ div#mid-main.main.col-sm-4 {
 
 .bean-name {
     text-align: left;
-    font-size: 3rem;
+    font-size: 3.5vh;
     color: var(--color-coffee);
     font-family: "Open Sans", sans-serif;
 }
