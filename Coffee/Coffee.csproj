@@ -197,6 +197,7 @@
     <Content Include="Content\CoffeeBags\peru.jpg" />
     <Content Include="Content\CoffeeBags\rwanda.jpg" />
     <Content Include="Content\CoffeeBags\sumatra.jpg" />
+    <Content Include="Content\Images\coffee-stain.jpg" />
     <Content Include="Content\Images\aroma.jpg" />
     <Content Include="Content\Images\beans-caffeine-coffee-2065.jpg" />
     <Content Include="Content\Images\beans.jpg" />
@@ -205,6 +206,11 @@
     <Content Include="Content\Images\beans4.jpg" />
     <Content Include="Content\Images\beverage-cafe-caffeine-324028.jpg" />
     <Content Include="Content\Images\beverage-caffeine-coffee-302894.jpg" />
+    <Content Include="Content\Images\chop-wood.jpg" />
+    <Content Include="Content\Images\cherries.jpg" />
+    <Content Include="Content\Images\color-wood.jpg" />
+    <Content Include="Content\Images\farm.jpg" />
+    <Content Include="Content\Images\moss-wood.jpg" />
     <Content Include="Content\Images\mug.jpg" />
     <Content Include="Content\Images\pexels-photo-585750.jpeg" />
     <Content Include="Content\Images\pexels-photo-702251.jpeg" />
@@ -215,6 +221,7 @@
     <Content Include="Content\Images\shop.jpg" />
     <Content Include="Content\Images\shop2.jpg" />
     <Content Include="Content\Images\shop3.jpg" />
+    <Content Include="Content\Images\table-wood.jpg" />
     <Content Include="Content\Script.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

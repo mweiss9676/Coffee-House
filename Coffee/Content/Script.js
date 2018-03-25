@@ -9,3 +9,21 @@
 //        leftImages.push(temp);
 //    }, 4000);
 //});
+$(document).ready(() => {
+    $('.bean-info-box').hover(function () {
+        $(this).addClass('transition');
+    }, function () {
+        $(this).removeClass('transition');
+        });
+
+    $('.bean-description-page').on('scroll', function () {
+        $('#brand').addClass('title-flip');
+    });
+});
+//$(document).ready(function () {
+//    $('.zoom').hover(function () {
+//        $(this).addClass('transition');
+//    }, function () {
+//        $(this).removeClass('transition');
+//    });
+//});

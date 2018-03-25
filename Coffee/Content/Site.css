@@ -31,6 +31,26 @@
     }
 }
 
+@keyframes flip-title {
+    0% {
+        /*writing-mode: inherit;*/
+        position: relative;
+        left: 0;
+    }
+    100% {
+        left: 200px;
+        /*writing-mode: horizontal-tb;
+        transform: rotate(0deg);*/
+    }
+}
+
+.transition {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
 /*******************END ANIMATIONS****************************/
 
 header {
@@ -120,6 +140,10 @@ div#mid-main.main.col-sm-4 {
     overflow-x: hidden;
 }
 
+.title-flip {
+    animation: flip-title;
+}
+
 .bean-background {
     background-image: url("Images/farm.jpg");
     background-size: cover;
@@ -147,6 +171,7 @@ div#mid-main.main.col-sm-4 {
     display: inline-block;
     margin: 20px 20px !important;
     box-shadow: 0 5px 10px -5px rgba(150, 100, 100, .8);
+    transition: all .2s ease-in-out;
 }
 
 .bean-image {
