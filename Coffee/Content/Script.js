@@ -12,18 +12,17 @@
 $(document).ready(() => {
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
+        $(this).css({
+            boxShadow: '0 28px 15px -15px rgba(50, 20, 20, .4)'
+        });
     }, function () {
         $(this).removeClass('transition');
+        $(this).css({
+            boxShadow: '0 5px 10px -5px rgba(50, 20, 20, .8)'
+        });
         });
 
 });
-//$(document).ready(function () {
-//    $('.zoom').hover(function () {
-//        $(this).addClass('transition');
-//    }, function () {
-//        $(this).removeClass('transition');
-//    });
-//});
 
 $(window).scroll(function () {
     let scrollPixels = parseInt($(window).scrollTop());
@@ -32,33 +31,20 @@ $(window).scroll(function () {
         $('#brand').text("CCC.");
         $('header').css({
             height: '100px',
-            //position: 'fixed',
             top: '0',
             left: '0'
-            //backgroundPosition: 'center 13%'
         });
         $('#brand').addClass('title-flip');
     } else {
         $('#brand').text("CLEVELAND COFFEE CO.");
         $('header').css({
             height: 'inherit',
-            //position: 'inherit',
             top: '0',
             left: '0'
-            //backgroundPosition: 'inherit'
         });
         $('#brand').removeClass('title-flip');
     }
 });
 
 
-//$("div#container").scroll(function () {
-//    var screenheight = parseInt($(document).height());
-//    var scrolledpx = parseInt($("div#container").scrollTop());
-//    var sum = screenheight + scrolledpx;
-//    console.log($("div#container").scrollTop());
-//    console.log("screen: " + screenheight);
-//    console.log("sum=" + sum);
-//    $("div.content").height(sum);
-//})
 

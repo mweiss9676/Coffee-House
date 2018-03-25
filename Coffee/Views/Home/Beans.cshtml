@@ -2,13 +2,17 @@
 
 @{
     ViewBag.Title = "Beans";
+    <script src="~/Scripts/angular.js"></script>
 }
 
 
 
 <header id="beans-header">
-    <h2 id="brand">CLEVELAND COFFEE CO.</h2>
+    <a id="brand-link" href="@Url.Action("Index", "Home")"><h2 id="brand">CLEVELAND COFFEE CO.</h2></a>
 </header>
+<div ng-app="" class="shopping-cart">
+    
+</div>
 <div class="bean-background">
     <div class="bean-description-page">
         @foreach (var item in Model)
@@ -17,8 +21,9 @@
                 <img class="bean-image" id="@item.Origin" src="~/Content/CoffeeBags/@item.ImageName" />
                 <div class="bean-description">
                     <h2 class="bean-name">@item.Origin</h2>
+                    <h6>Cart<span>-</span><span>+</span></h6>
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>
-                </div>
+                </div><!--END BEAN-DESCRIPTION-->
             </div><!--END BEAN-INFO-BOX-->
         }
         <div class="clear"></div>
