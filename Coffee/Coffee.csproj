@@ -150,47 +150,57 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Bean.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Bean.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Bean.cs">
-      <DependentUpon>Bean.tt</DependentUpon>
+      <DependentUpon>BeanModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Bean.Designer.cs">
+    <Compile Include="BeanModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bean.edmx</DependentUpon>
+      <DependentUpon>BeanModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Bean1.cs">
+    <Compile Include="BeanModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bean.tt</DependentUpon>
+      <DependentUpon>BeanModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BeanModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BeanModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\CoffeeContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bean.Context.tt">
+    <Content Include="BeanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bean.edmx</DependentUpon>
-      <LastGenOutput>Bean.Context.cs</LastGenOutput>
+      <DependentUpon>BeanModel.edmx</DependentUpon>
+      <LastGenOutput>BeanModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Bean.tt">
+    <Content Include="BeanModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Bean.edmx</DependentUpon>
-      <LastGenOutput>Bean1.cs</LastGenOutput>
+      <DependentUpon>BeanModel.edmx</DependentUpon>
+      <LastGenOutput>BeanModel.cs</LastGenOutput>
     </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CoffeeBags\colombia.jpg" />
+    <Content Include="Content\CoffeeBags\ethiopia.jpg" />
+    <Content Include="Content\CoffeeBags\ethiopia2.jpg" />
+    <Content Include="Content\CoffeeBags\guatemala.jpg" />
+    <Content Include="Content\CoffeeBags\honduras.jpg" />
+    <Content Include="Content\CoffeeBags\MWP.jpg" />
+    <Content Include="Content\CoffeeBags\papua-new-guinea.jpg" />
+    <Content Include="Content\CoffeeBags\peru.jpg" />
+    <Content Include="Content\CoffeeBags\rwanda.jpg" />
+    <Content Include="Content\CoffeeBags\sumatra.jpg" />
     <Content Include="Content\Images\aroma.jpg" />
     <Content Include="Content\Images\beans-caffeine-coffee-2065.jpg" />
     <Content Include="Content\Images\beans.jpg" />
+    <Content Include="Content\Images\beans2RESIZE.jpg" />
     <Content Include="Content\Images\beans3.jpg" />
     <Content Include="Content\Images\beans4.jpg" />
     <Content Include="Content\Images\beverage-cafe-caffeine-324028.jpg" />
@@ -215,12 +225,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Bean.edmx">
+    <EntityDeploy Include="BeanModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Bean.Designer.cs</LastGenOutput>
+      <LastGenOutput>BeanModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Bean.edmx.diagram">
-      <DependentUpon>Bean.edmx</DependentUpon>
+    <Content Include="BeanModel.edmx.diagram">
+      <DependentUpon>BeanModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

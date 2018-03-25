@@ -47,7 +47,7 @@
           <Property Name="ImageName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="CoffeeEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CoffeeEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Beans" EntityType="Self.Bean" />
         </EntityContainer>
       </Schema>
@@ -55,7 +55,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CoffeeModelStoreContainer" CdmEntityContainer="CoffeeEntities">
+        <EntityContainerMapping StorageEntityContainer="CoffeeModelStoreContainer" CdmEntityContainer="CoffeeEntities1">
           <EntitySetMapping Name="Beans">
             <EntityTypeMapping TypeName="CoffeeModel.Bean">
               <MappingFragment StoreEntitySet="Beans">

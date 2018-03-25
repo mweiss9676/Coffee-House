@@ -4,11 +4,16 @@
     box-sizing: border-box;
 }
 
+.clear {
+    clear: both;
+}
+
 /*******************VARIABLES*************************/
 
 :root {
     --header-height: 25vh;
     --font-color-main: rgba(255, 240, 219, .9);
+    --color-coffee: #0D0402;
 }
 
 /*******************END VARIABLES*************************/
@@ -23,7 +28,7 @@ header {
 
 #brand {
     color: var(--font-color-main);
-    font-size: 8rem;
+    font-size: 6rem;
     text-orientation: sideways;
     writing-mode: vertical-rl;
     height: var(--header-height);
@@ -54,7 +59,7 @@ header {
 .words {
     font-family: "Open Sans", sans-serif;
     font-weight: 100;
-    font-size: 8rem;
+    font-size: 6rem;
     text-wrap: none;
     width: 100%;
     text-align: center;
@@ -90,49 +95,66 @@ div#mid-main.main.col-sm-4 {
     width: 33%;
 }
 
+/*************************************BEANS****************************************/
 
-/***************OVERRIDING TO MAKE CAROUSEL VERTICAL********************/ 
-
-/*.vertical .carousel-inner {
-    height: 100%;
+#beans-header {
+    height: var(--header-height);
+    background-image: url("Images/beans2RESIZE.jpg");
+    background-size: cover;
+    position: relative;
 }
 
-.carousel.vertical .item {
-    -webkit-transition: 0.6s ease-in-out top;
-    -moz-transition: 0.6s ease-in-out top;
-    -ms-transition: 0.6s ease-in-out top;
-    -o-transition: 0.6s ease-in-out top;
-    transition: 0.6s ease-in-out top;
+.bean-background {
+    background-image: url("Images/shop3.jpg");
+    background-size: contain;
+    /*background-color: var(--font-color-main);*/
+    width: 100vw;
+    overflow: hidden;
 }
 
-.carousel.vertical .active {
-    top: 0;
+.bean-description-page {
+    width: 70vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
-.carousel.vertical .next {
-    top: 100%;
+.bean-info-box {
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px 20px !important;
+    box-shadow: 0 5px 10px -5px rgba(150, 100, 100, .8);
 }
 
-.carousel.vertical .prev {
-    top: -100%;
+.bean-image {
+    width: auto;
+    height: 30vh;
 }
 
-.carousel.vertical .next.left,
-.carousel.vertical .prev.right {
-    top: 0;
+.bean-description {
+    height: 10vh;
+    width: 300px;
+    background-color: white;
+    position: relative;
+    padding: 1rem !important;
 }
 
-.carousel.vertical .active.left {
-    top: -100%;
+.bean-name {
+    text-align: left;
+    font-size: 3rem;
+    color: var(--color-coffee);
+    font-family: "Open Sans", sans-serif;
 }
 
-.carousel.vertical .active.right {
-    top: 100%;
+.bean-price {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #944F50;
+    font-family: "Open Sans", sans-serif;
 }
 
-.carousel.vertical .item {
-    left: 0;
-}*/
-
-/***************OVERRIDING TO MAKE CAROUSEL VERTICAL********************/ 
-​
+/*********************************END BEANS****************************************/
