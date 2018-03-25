@@ -18,6 +18,21 @@
 
 /*******************END VARIABLES*************************/
 
+
+/*******************ANIMATIONS****************************/
+
+@keyframes background-shift {
+    0% {
+        background-position: center;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+/*******************END ANIMATIONS****************************/
+
 header {
     height: var(--header-height);
     width: 100vw;
@@ -102,12 +117,18 @@ div#mid-main.main.col-sm-4 {
     background-image: url("Images/beans2RESIZE.jpg");
     background-size: cover;
     position: relative;
+    overflow-x: hidden;
 }
 
 .bean-background {
-    background-image: url("Images/shop3.jpg");
-    background-size: contain;
-    /*background-color: var(--font-color-main);*/
+    background-image: url("Images/farm.jpg");
+    background-size: cover;
+    background-position: left;
+    animation-name: background-shift;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-duration: 200s;
     width: 100vw;
     overflow: hidden;
 }
