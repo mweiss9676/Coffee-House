@@ -25,6 +25,20 @@ namespace Coffee.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult BeansApi()
+        {
+            return Json(db.Beans, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult AddToCart(int beanId, int userId)
+        {
+            // Go to the database, add a bean id to the shopping cart
+
+            return Json(new HttpStatusCodeResult(200));
+        }
+
         public ActionResult Beans()
         {
             return View("Beans", db.Beans);
