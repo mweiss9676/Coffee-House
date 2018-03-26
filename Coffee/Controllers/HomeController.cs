@@ -6,6 +6,9 @@ using System.Web.Mvc;
 
 namespace Coffee.Controllers
 {
+
+    //Maybe use Cloudinary to resize images for each device 
+
     public class HomeController : Controller
     {
         CoffeeEntities1 db = new CoffeeEntities1();
