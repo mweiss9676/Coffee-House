@@ -200,3 +200,43 @@ div#mid-main.main.col-sm-4 {
 }
 
 /*********************************END BEANS****************************************/
+
+/*********************************ABOUT US****************************************/
+
+
+.au-background-vid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+video {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.au-paragraph {
+    position: absolute;
+    top: 270px;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+    background-color: rgba(200, 200, 200, .8);
+    width: 1000px;
+    height: auto;
+    padding: 5rem 10rem 10rem 10rem !important;
+    font-size: 1.7rem;
+}
+
+.au-ccc {
+    font-family: "Anton", sans-serif;
+    font-size: 6rem;
+    float: left;
+}
+
+/*********************************END ABOUT US****************************************/
+

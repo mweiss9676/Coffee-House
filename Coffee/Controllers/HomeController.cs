@@ -27,11 +27,9 @@ namespace Coffee.Controllers
             return View("Beans", db.Beans);
         }
 
-        public ActionResult Contact()
+        public ActionResult People()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View("People");
         }
     }
 }

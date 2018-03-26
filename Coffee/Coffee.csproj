@@ -175,6 +175,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\pour.jpg" />
     <Content Include="BeanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BeanModel.edmx</DependentUpon>
@@ -223,6 +224,7 @@
     <Content Include="Content\Images\shop3.jpg" />
     <Content Include="Content\Images\table-wood.jpg" />
     <Content Include="Content\Script.js" />
+    <Content Include="Content\Video\Double_Espresso.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1044,6 +1046,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Beans.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\People.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
