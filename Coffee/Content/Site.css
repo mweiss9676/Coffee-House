@@ -263,6 +263,10 @@ video {
     text-decoration: none;
 }
 
+table {
+    font-family: "Open Sans", sans-serif;
+}
+
 #menu-people, #menu-beans {
     color: rgba(230, 230, 230, .8);
     font-size: 2rem;
