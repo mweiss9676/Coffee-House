@@ -178,6 +178,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\man.jpg" />
     <Content Include="Content\Images\pour.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -213,6 +214,8 @@
     <Content Include="Content\Images\shop2.jpg" />
     <Content Include="Content\Images\shop3.jpg" />
     <Content Include="Content\Images\table-wood.jpg" />
+    <Content Include="Content\Images\woman.jpg" />
+    <Content Include="Content\Images\woman.png" />
     <Content Include="Content\Script.js" />
     <Content Include="Content\Video\Double_Espresso.mp4" />
     <Content Include="favicon.ico" />

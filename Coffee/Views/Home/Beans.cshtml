@@ -24,7 +24,12 @@
                 <img class="bean-image" id="@item.Origin" src="~/Content/CoffeeBags/@item.ImageName" />
                 <div class="bean-description">
                     <h2 class="bean-name">@item.Origin</h2>
-                    <h6>Cart<span>-</span><span>+</span></h6>
+                    <h5 class="bean-about hid">@item.Farm</h5>
+                    <h5 class="bean-about hid">@item.Region</h5>
+                    <h5 class="bean-about hid">@item.State</h5>
+                    <h5 class="bean-about hid">@item.Roast</h5>
+                    <h5 class="bean-about hid">@item.Flavor</h5>
+                    <h5 class="bean-about hid">@item.Description</h5>
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>
                 </div><!--END BEAN-DESCRIPTION-->
             </div><!--END BEAN-INFO-BOX-->

@@ -21,8 +21,13 @@ $(document).ready(() => {
             boxShadow: '0 5px 10px -5px rgba(50, 20, 20, .8)'
         });
         });
-
+    $('.bean-info-box').click(function () {
+        $(this).find('.bean-description').toggleClass('bean-description-expand');
+        $(this).find('.bean-about').toggleClass('hid');
+    });
 });
+
+
 
 $(window).scroll(function () {
     let scrollPixels = parseInt($(window).scrollTop());
@@ -51,14 +56,5 @@ $(window).scroll(function () {
     }
 });
 
-//$(window).scroll, function () {
-//    if (top <= $(window).scrollTop()) {
-//        // if so, add the fixed class
-//        $('#').addClass('fixed');
-//    } else {
-//        // otherwise remove it
-//        $('#kolonne-v').removeClass('fixed');
-//    }
-//})
 
 
