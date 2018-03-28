@@ -26,6 +26,7 @@ $(document).ready(() => {
 
 $(window).scroll(function () {
     let scrollPixels = parseInt($(window).scrollTop());
+    let top = 250;
 
     if (scrollPixels > 150) {
         $('#brand').text("CCC.");
@@ -44,7 +45,20 @@ $(window).scroll(function () {
         });
         $('#brand').removeClass('title-flip');
     }
+
+    if (top <= $(window).scrollTop()) {
+
+    }
 });
 
+//$(window).scroll, function () {
+//    if (top <= $(window).scrollTop()) {
+//        // if so, add the fixed class
+//        $('#').addClass('fixed');
+//    } else {
+//        // otherwise remove it
+//        $('#kolonne-v').removeClass('fixed');
+//    }
+//})
 
 

@@ -11,18 +11,19 @@ namespace Coffee.Controllers
 
     public class HomeController : Controller
     {
-        CoffeeEntities1 db = new CoffeeEntities1();
+        //Model1 db = new CoffeeEntities1();
+        db5a880438084247f18360a8af0029f810Entities db = new db5a880438084247f18360a8af0029f810Entities();
+
+
 
         public ActionResult Index()
         {
             return View("Index");
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+        public ActionResult Menu()
+        {            
+            return View("Menu", db.Menus);
         }
 
         [HttpGet]

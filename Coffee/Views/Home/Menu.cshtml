@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Coffee.Menu>
+@using System.Text.RegularExpressions;
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+<header id="header">
+    <a id="brand-link" href="@Url.Action("Index", "Home")"><h2 id="brand">CLEVELAND COFFEE CO.</h2></a>
+    <div class="menu-links">
+        <a id="beans-link" href="@Url.Action("Beans", "Home")"><h2 id="menu-beans">BEANS</h2></a>
+        <a id="people-link" href="@Url.Action("People", "Home")"><h2 id="menu-people">PEOPLE</h2></a>
+    </div>
+</header>
+<div class="header-spacer"></div>
+<div class="menu-background"></div>
+<div class="menu-items">
+    <table class="iced-drinks-table">
+        <thead>
+            <tr>
+                <th>Iced</th>
+                <th id="cold-price">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var drink in Model)
+        {
+            if (drink.Category.ToLower() == "iced")
+            {
+                <tr>
+                    <td>@drink.Name</td>
+                    <td class="menu-price">@drink.Price.ToString("C")</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+    <table class="hot-drinks-table">
+        <thead>
+            <tr>
+                <th>Hot</th>
+                <th id="hot-price">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var drink in Model)
+        {
+            if (!(drink.Category.ToLower() == "iced"))
+            {
+                <tr>
+                    <td>@drink.Name</td>
+                    <td class="menu-price">@drink.Price.ToString("C")</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div><!--END MENU ITEMS-->

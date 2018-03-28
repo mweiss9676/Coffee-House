@@ -14,6 +14,8 @@
     --header-height: 240px;
     --font-color-main: rgba(255, 240, 219, .9);
     --color-coffee: #0D0402;
+    --table-row-underline: rgba(240, 240, 240, .3);
+    --header-background-color: rgba(20, 20, 20, .9);
 }
 
 /*******************END VARIABLES*************************/
@@ -43,7 +45,7 @@
 header {
     height: var(--header-height);
     width: 100vw;
-    background-color: rgba(20, 20, 20, .9);
+    background-color: var(--header-background-color);
     position: fixed;
     z-index: 4;
 }
@@ -239,4 +241,100 @@ video {
 }
 
 /*********************************END ABOUT US****************************************/
+
+
+
+/*********************************MENU****************************************/
+
+.header-spacer {
+    height: var(--header-height);    
+}
+
+.menu-links {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#beans-link, #people-link {
+    text-decoration: none;
+}
+
+#menu-people, #menu-beans {
+    color: rgba(230, 230, 230, .8);
+    font-size: 2rem;
+    margin-right: 10px !important;
+    font-family: "Anton", sans-serif;
+}
+
+.menu-background {
+    background-image: url("Images/beans4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-width: 100vw;
+    position: fixed;
+    top: 0; 
+    left: 0;
+}
+
+.menu-items {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 400px;
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.iced-drinks-table, .hot-drinks-table {
+    /*position: absolute;*/
+    box-sizing: content-box !important;
+    padding: 50px !important;
+    width: 40vw;
+    font-size: 2rem;
+    color: white;
+    background: inherit;
+    overflow: hidden;
+    background-color: var(--header-background-color);
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, .4);
+    margin-bottom: 50px !important;
+}
+
+.iced-drinks-table th, .hot-drinks-table th {
+    height: 40px;
+    padding: 1rem !important;
+    border-bottom: 1px solid var(--table-row-underline);
+}
+
+.iced-drinks-table td, .hot-drinks-table td {
+    padding: 0 1rem !important;
+    border-bottom: 1px solid var(--table-row-underline);
+}
+
+/*.menu-items {
+    position: relative;
+    top: 300px;
+}*/
+
+.menu-price {
+    text-align: right;
+}
+
+#cold-price, #hot-price {
+    text-align: right;
+}
+
+/*.fixed {
+    position: fixed;
+}*/
+
+/*********************************END MENU****************************************/
 
