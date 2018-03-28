@@ -224,20 +224,36 @@ video {
 
 .au-paragraph {
     position: absolute;
-    top: 270px;
+    top: 350px;
     font-family: "Open Sans", sans-serif;
     color: white;
     background-color: rgba(200, 200, 200, .8);
     width: 1000px;
+    text-align: justify;
     height: auto;
-    padding: 5rem 10rem 10rem 10rem !important;
+    padding: 15rem 10rem 15rem 10rem !important;
     font-size: 1.7rem;
+}
+
+.au-rest-of-paragraph #man{
+    margin-left: 1rem !important;
 }
 
 .au-ccc {
     font-family: "Anton", sans-serif;
     font-size: 6rem;
     float: left;
+    padding-right: 1rem !important;
+}
+
+#man {
+    float: right;
+    height: 20vw;    
+}
+
+#woman {
+    width: 100%;
+    margin-top: 3rem !important;
 }
 
 /*********************************END ABOUT US****************************************/
