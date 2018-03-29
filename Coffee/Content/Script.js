@@ -25,12 +25,13 @@ $(document).ready(() => {
         $(this).find('.bean-description').toggleClass('bean-description-expand');
         $(this).find('.bean-about').toggleClass('hid');
     });
-    //$('.add-to-cart').click(function () {
-    //    const item = document.createElement("h5");
-    //    let name = $(this).parent().parent().text;
-    //    item.innerText = name;
-    //    $('.cart-body').append(item);
-    //});
+    $('.add-to-cart').click(function () {
+        var hey = $(this).siblings('.submit-value');
+        hey.val("add");
+    });
+    $('.remove-from-cart').click(function () {
+        $('.submit-value').val("remove");
+    });
 });
 
 

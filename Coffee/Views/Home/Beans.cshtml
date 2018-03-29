@@ -33,12 +33,13 @@
                     <h5 class="bean-about hid">@item.Roast</h5>
                     <h5 class="bean-about hid">@item.Flavor</h5>
                     <h5 class="bean-about hid">@item.Description</h5>
-                    @using (Ajax.BeginForm("AddToCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts" }))
+                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts" }))
                     {
                     <div class="buttons">
                         <input type="hidden" name="beanId" value="@item.ID" />
-                        <input id="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
-                        <input id="add-to-cart" type="submit" value="+" name="AddToCart" />
+                        <input class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
+                        <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
+                        <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
                     </div>
                     }
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>

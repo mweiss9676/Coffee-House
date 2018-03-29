@@ -242,7 +242,7 @@ div#mid-main.main.col-sm-4 {
     left: 0;
 }
 
-#add-to-cart, #remove-from-cart {
+.add-to-cart, .remove-from-cart {
     margin-left: 1rem !important;
     border: none !important;
     background: none !important;

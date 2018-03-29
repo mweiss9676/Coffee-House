@@ -29,22 +29,31 @@ namespace Coffee.Controllers
             return View("Menu", db.Menus);
         }
 
-        [HttpGet]
-        public ActionResult BeansApi()
-        {
-            return Json(db.Beans, JsonRequestBehavior.AllowGet);
-        }
-
         [HttpPost]
-        public ActionResult AddToCart(int beanId)
+        public ActionResult UpdateCart(int beanId, string addAmount)
         {
             // Go to the database, add a bean id to the shopping cart
 
             var cartItem = db.Beans.FirstOrDefault(b => b.ID == beanId);
 
+            if(cartItem == null)
+            {
+                return View("Beans");
+            }
+
             var cart = GetActiveShoppingCart();
 
-            cart.Add(cartItem);
+
+            if (addAmount == "remove")
+            {
+                var removeMe = cart.Where(x => x.ID == cartItem.ID).FirstOrDefault();
+                
+                cart.Remove(removeMe);
+            }
+            else if (addAmount == "add")
+            {
+                cart.Add(cartItem);
+            }
 
             ViewBag.Total = GetTotal(cart);
 
