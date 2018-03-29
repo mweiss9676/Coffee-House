@@ -265,13 +265,19 @@ div#mid-main.main.col-sm-4 {
 
 /*********************************SHOPPING CART****************************************/
 
-.shopping-cart {
+
+#carts {
     position: fixed;
     bottom: 0;
-    right: 0;
+    right: -300px;
     width: 300px;
     height: 300px;
     background-color: white;
+    transition: right 0.1s linear;
+}
+
+#carts.visible {
+    right: 0px;
 }
 
 .cart-header {
@@ -282,11 +288,11 @@ div#mid-main.main.col-sm-4 {
 
 .cart-header h1 {
     font-family: var(--font-family-header);
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem !important;
 }
 
 .cart-body {
-    margin: 2rem !important;
+    margin: 0 1rem 1rem 1rem !important;
     display: grid;
     grid-template-columns: repeat(1fr 1fr);
     grid-template-rows: repeat(10px);

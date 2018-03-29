@@ -13,9 +13,7 @@
         <a id="people-link" href="@Url.Action("People", "Home")"><h2 id="menu-people">PEOPLE</h2></a>
     </div>
 </header>
-<div ng-app="" class="shopping-cart">
-    
-</div>
+
 <div class="bean-background">
     <div class="bean-description-page">
         @foreach (var item in Model)
@@ -23,9 +21,7 @@
             <div class="bean-info-box">
                 <img class="bean-image" id="@item.Origin" src="~/Content/CoffeeBags/@item.ImageName" />
                 <div class="bean-description">
-                    <h2 class="bean-name">
-                        @item.Origin
-                    </h2>
+                    <h2 class="bean-name">@item.Origin</h2>
                     <h5 class="bean-about hid">@item.Farm</h5>
                     <h5 class="bean-about hid">@item.Region</h5>
                     <h5 class="bean-about hid">@item.State</h5>
@@ -33,7 +29,7 @@
                     <h5 class="bean-about hid">@item.Roast</h5>
                     <h5 class="bean-about hid">@item.Flavor</h5>
                     <h5 class="bean-about hid">@item.Description</h5>
-                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts" }))
+                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts"@*, OnComplete="cartUpdate"*@ }))
                     {
                     <div class="buttons">
                         <input type="hidden" name="beanId" value="@item.ID" />
@@ -48,7 +44,8 @@
         }
         <div class="clear"></div>
     </div><!--END BEAN-DESCRIPTION-PAGE-->
-    @*@Html.Partial("ShoppingCart");*@
-    <div id="carts"></div>
+    <div id="carts">
+        @*@Html.Action("ViewCart")*@
+    </div>
 </div><!--END BEAN-BACKGROUND-->
 

@@ -29,6 +29,13 @@ namespace Coffee.Controllers
             return View("Menu", db.Menus);
         }
 
+        //public ActionResult ViewCart()
+        //{
+        //    var cart = GetActiveShoppingCart();
+        //    ViewBag.Total = GetTotal(cart);
+        //    return PartialView("ShoppingCart", cart);
+        //}
+
         [HttpPost]
         public ActionResult UpdateCart(int beanId, string addAmount)
         {

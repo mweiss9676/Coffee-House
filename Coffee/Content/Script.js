@@ -1,14 +1,10 @@
-﻿//$(document).ready(() => {
-//    let leftImages = Array.from(document.querySelectorAll("#left-main > img"));
-//    setInterval(() => {
-//        //$("#cs-1").animate({ top: '-100%' }),
-//        //$("#cs-1").animate({ top: '100%' });
-//        let temp = leftImages.shift();
-//        $(temp).animate({ top: '-100%' });
-//        $(temp).animate({ top: '100%' });
-//        leftImages.push(temp);
-//    }, 4000);
-//});
+﻿let count = 0;
+
+
+//function cartUpdate() {
+//    document.querySelector("#carts").classList.add("visible");
+//}
+
 $(document).ready(() => {
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
@@ -21,16 +17,25 @@ $(document).ready(() => {
             boxShadow: '0 5px 10px -5px rgba(50, 20, 20, .8)'
         });
         });
-    $('.bean-info-box').click(function () {
-        $(this).find('.bean-description').toggleClass('bean-description-expand');
-        $(this).find('.bean-about').toggleClass('hid');
+    $('.bean-image').click(function () {
+        $(this).siblings('.bean-description').toggleClass('bean-description-expand');
+        $(this).siblings().children('.bean-about').toggleClass('hid');
     });
     $('.add-to-cart').click(function () {
-        var hey = $(this).siblings('.submit-value');
-        hey.val("add");
+        count++;
+        $('.submit-value').val("add");
+        if (count > 0) {
+            document.querySelector("#carts").classList.add("visible");
+        }
     });
     $('.remove-from-cart').click(function () {
+        if (count != 0) {
+            count--;
+        }
         $('.submit-value').val("remove");
+        if (count < 1) {
+            document.querySelector("#carts").classList.remove("visible");
+        }
     });
 });
 
