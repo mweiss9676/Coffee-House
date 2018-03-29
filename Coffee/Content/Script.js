@@ -25,6 +25,12 @@ $(document).ready(() => {
         $(this).find('.bean-description').toggleClass('bean-description-expand');
         $(this).find('.bean-about').toggleClass('hid');
     });
+    //$('.add-to-cart').click(function () {
+    //    const item = document.createElement("h5");
+    //    let name = $(this).parent().parent().text;
+    //    item.innerText = name;
+    //    $('.cart-body').append(item);
+    //});
 });
 
 
@@ -55,6 +61,7 @@ $(window).scroll(function () {
 
     }
 });
+
 
 
 

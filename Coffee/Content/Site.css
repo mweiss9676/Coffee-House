@@ -3,6 +3,7 @@
     margin: 0 !important;
     box-sizing: border-box;
     user-select: none;
+    transition-duration: .1s;
 }
 
 .clear {
@@ -17,6 +18,8 @@
     --color-coffee: #0D0402;
     --table-row-underline: rgba(240, 240, 240, .3);
     --header-background-color: rgba(20, 20, 20, .9);
+    --font-family-header: "Anton", sans-serif;
+    --font-family-paragraph: "Open Sans", sans-serif;
 }
 
 /*******************END VARIABLES*************************/
@@ -49,6 +52,7 @@ header {
     background-color: var(--header-background-color);
     position: fixed;
     z-index: 4;
+    overflow: hidden;
 }
 
 #brand {
@@ -61,8 +65,16 @@ header {
     left: 1rem;
     transform: rotate(-90deg);
     text-transform: uppercase;
-    font-family: "Anton", sans-serif;
+    font-family: var(--font-family-header);
     position: relative;
+}
+
+#link-divide {
+    border: none;
+    border-left: 2px solid rgba(230, 230, 230, .6);
+    /*margin-right: 1rem !important;*/
+    height: 20px;
+    width: 1rem;
 }
 
 #brand-link {
@@ -175,6 +187,10 @@ div#mid-main.main.col-sm-4 {
     position: relative;  
 }
 
+.bean-info-box:hover {
+    cursor: pointer;
+}
+
 .bean-about {
     text-align: left;
     font-family: "Open Sans", sans-serif;
@@ -211,6 +227,30 @@ div#mid-main.main.col-sm-4 {
     font-family: "Anton", sans-serif;
 }
 
+.cart {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+    color: #944F50;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#add-to-cart, #remove-from-cart {
+    margin-left: 1rem !important;
+    border: none !important;
+    background: none !important;
+    font-size: 3rem;
+    z-index: 90;
+    color: #944F50;
+}
+
 .bean-price {
     position: absolute;
     bottom: 1rem;
@@ -221,6 +261,67 @@ div#mid-main.main.col-sm-4 {
 }
 
 /*********************************END BEANS****************************************/
+
+
+/*********************************SHOPPING CART****************************************/
+
+.shopping-cart {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+}
+
+.cart-header {
+    height: 20%;
+    background-color: var(--color-coffee);
+    color: var(--font-color-main);
+}
+
+.cart-header h1 {
+    font-family: var(--font-family-header);
+    padding: 0 1rem 1rem 1rem;
+}
+
+.cart-body {
+    margin: 2rem !important;
+    display: grid;
+    grid-template-columns: repeat(1fr 1fr);
+    grid-template-rows: repeat(10px);
+    grid-template-areas: 
+        'item quantity'
+        'footer footer';
+}
+
+.cart-word {
+    font-family: var(--font-family-paragraph);
+    font-size: 2rem;
+}
+
+.cart-item {
+    display: block;
+    position: static;
+}
+
+.cart-quantity {
+    display: block;
+    position: static;
+    text-align: right;
+}
+
+.cart-footer {
+    grid-area: footer;
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+}
+
+
+
+/*********************************END SHOPPING CART****************************************/
+
 
 /*********************************ABOUT US****************************************/
 
@@ -249,6 +350,7 @@ video {
     background-color: rgba(200, 200, 200, .8);
     width: 1000px;
     text-align: justify;
+    text-align-last: left;
     height: auto;
     padding: 15rem 10rem 15rem 10rem !important;
     font-size: 1.7rem;

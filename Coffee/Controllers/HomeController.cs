@@ -14,6 +14,8 @@ namespace Coffee.Controllers
         //Model1 db = new CoffeeEntities1();
         db5a880438084247f18360a8af0029f810Entities db = new db5a880438084247f18360a8af0029f810Entities();
 
+        //public IList<Bean> Cart { get; set; } = new List<Bean>();
+
 
 
         public ActionResult Index()
@@ -22,7 +24,8 @@ namespace Coffee.Controllers
         }
 
         public ActionResult Menu()
-        {            
+        {
+            
             return View("Menu", db.Menus);
         }
 
@@ -33,12 +36,50 @@ namespace Coffee.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddToCart(int beanId, int userId)
+        public ActionResult AddToCart(int beanId)
         {
             // Go to the database, add a bean id to the shopping cart
 
-            return Json(new HttpStatusCodeResult(200));
+            var cartItem = db.Beans.FirstOrDefault(b => b.ID == beanId);
+
+            var cart = GetActiveShoppingCart();
+
+            cart.Add(cartItem);
+
+            ViewBag.Total = GetTotal(cart);
+
+            return PartialView("ShoppingCart", cart);
         }
+
+        private IList<Bean> GetActiveShoppingCart()
+        {
+            List<Bean> cart = null;
+
+            if (Session["ShoppingCart"] == null)
+            {
+                cart = new List<Bean>();
+                Session["ShoppingCart"] = cart;
+            }
+            else
+            {
+                cart = Session["ShoppingCart"] as List<Bean>;
+            }
+
+            return cart;
+        }
+
+        private decimal GetTotal(IList<Bean> cart)
+        {
+            decimal total = 0;
+
+            foreach (var item in cart)
+            {
+                total += item.Price;
+            }
+
+            return total;
+        }
+
 
         public ActionResult Beans()
         {

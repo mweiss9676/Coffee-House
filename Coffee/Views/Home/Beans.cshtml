@@ -9,7 +9,7 @@
 <header id="beans-header">
     <a id="brand-link" href="@Url.Action("Index", "Home")"><h2 id="brand">CLEVELAND COFFEE CO.</h2></a>
     <div class="menu-links">
-        <a id="beans-link" href="@Url.Action("MENU", "Home")"><h2 id="menu-beans">MENU</h2></a>
+        <a id="beans-link" href="@Url.Action("MENU", "Home")"><h2 id="menu-beans">MENU</h2></a><hr id="link-divide"/>
         <a id="people-link" href="@Url.Action("People", "Home")"><h2 id="menu-people">PEOPLE</h2></a>
     </div>
 </header>
@@ -23,18 +23,31 @@
             <div class="bean-info-box">
                 <img class="bean-image" id="@item.Origin" src="~/Content/CoffeeBags/@item.ImageName" />
                 <div class="bean-description">
-                    <h2 class="bean-name">@item.Origin</h2>
+                    <h2 class="bean-name">
+                        @item.Origin
+                    </h2>
                     <h5 class="bean-about hid">@item.Farm</h5>
                     <h5 class="bean-about hid">@item.Region</h5>
                     <h5 class="bean-about hid">@item.State</h5>
+                    <h5 class="bean-about hid">@item.ID</h5>
                     <h5 class="bean-about hid">@item.Roast</h5>
                     <h5 class="bean-about hid">@item.Flavor</h5>
                     <h5 class="bean-about hid">@item.Description</h5>
+                    @using (Ajax.BeginForm("AddToCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts" }))
+                    {
+                    <div class="buttons">
+                        <input type="hidden" name="beanId" value="@item.ID" />
+                        <input id="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
+                        <input id="add-to-cart" type="submit" value="+" name="AddToCart" />
+                    </div>
+                    }
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>
                 </div><!--END BEAN-DESCRIPTION-->
             </div><!--END BEAN-INFO-BOX-->
         }
         <div class="clear"></div>
     </div><!--END BEAN-DESCRIPTION-PAGE-->
+    @*@Html.Partial("ShoppingCart");*@
+    <div id="carts"></div>
 </div><!--END BEAN-BACKGROUND-->
 
