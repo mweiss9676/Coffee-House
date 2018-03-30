@@ -8,10 +8,6 @@
 
     count = parseInt(count);
 
-    if (count > 0) {
-        document.querySelector("#carts").classList.add("visible");
-    }
-
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
         $(this).css({
