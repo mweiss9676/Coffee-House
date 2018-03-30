@@ -1,11 +1,17 @@
-﻿let count = 0;
+﻿$(document).ready(() => {
 
+    let count = $('.viewbag-data').text();
 
-//function cartUpdate() {
-//    document.querySelector("#carts").classList.add("visible");
-//}
+    if (count == "") {
+        count = 0;
+    }
 
-$(document).ready(() => {
+    count = parseInt(count);
+
+    if (count > 0) {
+        document.querySelector("#carts").classList.add("visible");
+    }
+
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
         $(this).css({
@@ -22,6 +28,7 @@ $(document).ready(() => {
         $(this).siblings().children('.bean-about').toggleClass('hid');
     });
     $('.add-to-cart').click(function () {
+
         count++;
         $('.submit-value').val("add");
         if (count > 0) {
@@ -33,7 +40,7 @@ $(document).ready(() => {
             count--;
         }
         $('.submit-value').val("remove");
-        if (count < 1) {
+        if (count == 0) {
             document.querySelector("#carts").classList.remove("visible");
         }
     });

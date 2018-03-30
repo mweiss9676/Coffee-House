@@ -249,6 +249,8 @@ div#mid-main.main.col-sm-4 {
     font-size: 3rem;
     z-index: 90;
     color: #944F50;
+    padding: 1rem;
+    outline: none;
 }
 
 .bean-price {
@@ -322,6 +324,12 @@ div#mid-main.main.col-sm-4 {
     position: absolute; 
     bottom: 0;
     right: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.viewbag-data {
+    display: none;
 }
 
 
@@ -463,11 +471,6 @@ table {
     border-bottom: 1px solid var(--table-row-underline);
 }
 
-/*.menu-items {
-    position: relative;
-    top: 300px;
-}*/
-
 .menu-price {
     text-align: right;
 }
@@ -475,10 +478,6 @@ table {
 #cold-price, #hot-price {
     text-align: right;
 }
-
-/*.fixed {
-    position: fixed;
-}*/
 
 /*********************************END MENU****************************************/
 

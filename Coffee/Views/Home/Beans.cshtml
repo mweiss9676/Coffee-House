@@ -2,14 +2,16 @@
 
 @{
     ViewBag.Title = "Beans";
+    var numberOfItems = ViewBag.NumberOfItems;
 }
 
 
+<div class="viewbag-data">@numberOfItems</div>
 
 <header id="beans-header">
     <a id="brand-link" href="@Url.Action("Index", "Home")"><h2 id="brand">CLEVELAND COFFEE CO.</h2></a>
     <div class="menu-links">
-        <a id="beans-link" href="@Url.Action("MENU", "Home")"><h2 id="menu-beans">MENU</h2></a><hr id="link-divide"/>
+        <a id="beans-link" href="@Url.Action("MENU", "Home")"><h2 id="menu-beans">MENU</h2></a><hr id="link-divide" />
         <a id="people-link" href="@Url.Action("People", "Home")"><h2 id="menu-people">PEOPLE</h2></a>
     </div>
 </header>
@@ -29,14 +31,17 @@
                     <h5 class="bean-about hid">@item.Roast</h5>
                     <h5 class="bean-about hid">@item.Flavor</h5>
                     <h5 class="bean-about hid">@item.Description</h5>
-                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "carts"@*, OnComplete="cartUpdate"*@ }))
+                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions
                     {
-                    <div class="buttons">
-                        <input type="hidden" name="beanId" value="@item.ID" />
-                        <input class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
-                        <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
-                        <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
-                    </div>
+                        HttpMethod = "POST",
+                        UpdateTargetId = "carts"@*, OnComplete="cartUpdate"*@ }))
+                    {
+                        <div class="buttons">
+                            <input type="hidden" name="beanId" value="@item.ID" />
+                            <input class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
+                            <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
+                            <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
+                        </div>
                     }
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>
                 </div><!--END BEAN-DESCRIPTION-->
@@ -44,8 +49,5 @@
         }
         <div class="clear"></div>
     </div><!--END BEAN-DESCRIPTION-PAGE-->
-    <div id="carts">
-        @*@Html.Action("ViewCart")*@
-    </div>
+    <div id="carts"></div>
 </div><!--END BEAN-BACKGROUND-->
-

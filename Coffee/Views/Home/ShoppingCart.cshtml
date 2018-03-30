@@ -3,6 +3,7 @@
 @{ 
     var total = ViewBag.Total;
     Dictionary<string, int> beans = new Dictionary<string, int>();
+
     foreach (var bean in Model)
     {
         int count = Model.Where(b => b.ID == bean.ID).Count();
@@ -20,7 +21,6 @@
              <h6 class="cart-item cart-word">@kvp.Key</h6>     
              <h6 class="cart-quantity cart-word">@kvp.Value</h6>
         }
-        <hr />
     </div>
-    <div class="cart-footer cart-word">@total.ToString("C")</div>
+    <div class="cart-footer cart-word"><hr id="total-hr"/>@total.ToString("C")</div>
 </div>

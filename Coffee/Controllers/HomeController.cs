@@ -7,15 +7,9 @@ using System.Web.Mvc;
 namespace Coffee.Controllers
 {
 
-    //Maybe use Cloudinary to resize images for each device 
-
     public class HomeController : Controller
     {
-        //Model1 db = new CoffeeEntities1();
         db5a880438084247f18360a8af0029f810Entities db = new db5a880438084247f18360a8af0029f810Entities();
-
-        //public IList<Bean> Cart { get; set; } = new List<Bean>();
-
 
 
         public ActionResult Index()
@@ -29,17 +23,9 @@ namespace Coffee.Controllers
             return View("Menu", db.Menus);
         }
 
-        //public ActionResult ViewCart()
-        //{
-        //    var cart = GetActiveShoppingCart();
-        //    ViewBag.Total = GetTotal(cart);
-        //    return PartialView("ShoppingCart", cart);
-        //}
-
         [HttpPost]
         public ActionResult UpdateCart(int beanId, string addAmount)
         {
-            // Go to the database, add a bean id to the shopping cart
 
             var cartItem = db.Beans.FirstOrDefault(b => b.ID == beanId);
 
@@ -99,6 +85,9 @@ namespace Coffee.Controllers
 
         public ActionResult Beans()
         {
+            var cart = GetActiveShoppingCart();
+            ViewBag.NumberOfItems = cart.Count;
+
             return View("Beans", db.Beans);
         }
 
