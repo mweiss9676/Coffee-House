@@ -49,8 +49,8 @@ function HideShoppingCart() {
 
 function UpdateIds() {
     var ourRequest = new XMLHttpRequest();
-    var host = 'http://localhost:50031/Home/GetIds'
-    //var host = window.location.hostname;
+    //var host = 'http://localhost:50031/Home/GetIds'
+    var host = 'http://' + window.location.host + '/Home/GetIds';
     ourRequest.open('GET', host);
     ourRequest.onload = function () {
         ids = JSON.parse(ourRequest.responseText);
@@ -63,15 +63,6 @@ function UpdateIds() {
         console.log(ourRequest.responseText);
     };
     ourRequest.send();
-
-    //ourRequest.onreadystatechange = function () {
-    //    if (ourRequest.readyState === XMLHttpRequest.DONE && ourRequest.status === 200) {
-    //        UpdateCount();
-    //        if (count > 0) {
-    //            ShowShoppingCart();
-    //        };
-    //    }
-    //};
 }
 
 function UpdateCount() {
