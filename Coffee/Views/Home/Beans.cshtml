@@ -1,12 +1,10 @@
 ﻿@model IEnumerable<Coffee.Bean>
+@using System.Web.Script.Serialization;
 
 @{
-    ViewBag.Title = "Beans";
-    var numberOfItems = ViewBag.NumberOfItems;
+    var cart = ViewBag.Cart;
+    //var ids = ViewBag.cartIds;
 }
-
-
-<div class="viewbag-data">@numberOfItems</div>
 
 <header id="beans-header">
     <a id="brand-link" href="@Url.Action("Index", "Home")"><h2 id="brand">CLEVELAND COFFEE CO.</h2></a>
@@ -34,11 +32,11 @@
                     @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions
                     {
                         HttpMethod = "POST",
-                        UpdateTargetId = "carts"@*, OnComplete="cartUpdate"*@ }))
+                        UpdateTargetId = "carts"}))
                     {
                         <div class="buttons">
-                            <input type="hidden" name="beanId" value="@item.ID" />
-                            <input class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
+                            <input class="itemId" type="hidden" name="beanId" value="@item.ID" />
+                            <input data-name="@item.Origin" class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
                             <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
                             <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
                         </div>
@@ -49,5 +47,10 @@
         }
         <div class="clear"></div>
     </div><!--END BEAN-DESCRIPTION-PAGE-->
-    <div id="carts"></div>
+    <div id="carts">
+        @*@if (ids.Length > 0)
+        {
+            @Html.Partial("ShoppingCart")
+        }*@
+    </div>
 </div><!--END BEAN-BACKGROUND-->

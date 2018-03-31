@@ -241,6 +241,7 @@ div#mid-main.main.col-sm-4 {
 }
 
 .add-to-cart, .remove-from-cart {
+    display: inline-block;
     margin-left: 1rem !important;
     border: none !important;
     background: none !important;

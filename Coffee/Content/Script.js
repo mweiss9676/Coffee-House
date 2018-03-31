@@ -1,12 +1,14 @@
-﻿$(document).ready(() => {
+﻿var ids = [];
+var count = 0;
 
-    let count = $('.viewbag-data').text();
 
-    if (count == "") {
-        count = 0;
-    }
+$(document).ready(function () {
+    UpdateIds();
+});
 
-    count = parseInt(count);
+
+
+$(window).on("load", function () {
 
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
@@ -23,25 +25,58 @@
         $(this).siblings('.bean-description').toggleClass('bean-description-expand');
         $(this).siblings().children('.bean-about').toggleClass('hid');
     });
-    $('.add-to-cart').click(function () {
 
-        count++;
+
+    $('.add-to-cart').click(function () {
         $('.submit-value').val("add");
-        if (count > 0) {
-            document.querySelector("#carts").classList.add("visible");
-        }
+        ShowShoppingCart();
     });
+
     $('.remove-from-cart').click(function () {
-        if (count != 0) {
-            count--;
-        }
+        UpdateIds();
         $('.submit-value').val("remove");
-        if (count == 0) {
-            document.querySelector("#carts").classList.remove("visible");
-        }
     });
 });
 
+
+function ShowShoppingCart() {
+    $('#carts').addClass('visible');
+}
+
+function HideShoppingCart() {
+    $('#carts').removeClass('visible');
+}
+
+function UpdateIds() {
+    var ourRequest = new XMLHttpRequest();
+    var host = 'http://localhost:50031/Home/GetIds'
+    //var host = window.location.hostname;
+    ourRequest.open('GET', host);
+    ourRequest.onload = function () {
+        ids = JSON.parse(ourRequest.responseText);
+        UpdateCount();
+        if (count > 1) {
+            ShowShoppingCart();
+        } else {
+            HideShoppingCart();
+        }
+        console.log(ourRequest.responseText);
+    };
+    ourRequest.send();
+
+    //ourRequest.onreadystatechange = function () {
+    //    if (ourRequest.readyState === XMLHttpRequest.DONE && ourRequest.status === 200) {
+    //        UpdateCount();
+    //        if (count > 0) {
+    //            ShowShoppingCart();
+    //        };
+    //    }
+    //};
+}
+
+function UpdateCount() {
+    count = ids.length;
+}
 
 
 $(window).scroll(function () {
@@ -65,11 +100,11 @@ $(window).scroll(function () {
         });
         $('#brand').removeClass('title-flip');
     }
-
-    if (top <= $(window).scrollTop()) {
-
-    }
 });
+
+
+
+
 
 
 

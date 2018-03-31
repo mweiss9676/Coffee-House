@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<Coffee.Bean>
 
-@{ 
+@{
     var total = ViewBag.Total;
+
     Dictionary<string, int> beans = new Dictionary<string, int>();
 
     foreach (var bean in Model)
     {
-        int count = Model.Where(b => b.ID == bean.ID).Count();
+        int count = Model.Where(m => m.ID == bean.ID).Count();
         beans[bean.Origin] = count;
     }
 }
@@ -18,9 +19,12 @@
     <div class="cart-body">
         @foreach (var kvp in beans)
         {
-             <h6 class="cart-item cart-word">@kvp.Key</h6>     
-             <h6 class="cart-quantity cart-word">@kvp.Value</h6>
+            <h6 class="cart-item cart-word">@kvp.Key</h6>
+            <h6 class="cart-quantity cart-word">@kvp.Value</h6>
         }
     </div>
-    <div class="cart-footer cart-word"><hr id="total-hr"/>@total.ToString("C")</div>
+    @if (total != null)
+    {
+        <div class="cart-footer cart-word"><hr id="total-hr" />@total.ToString("C")</div>
+    }
 </div>
