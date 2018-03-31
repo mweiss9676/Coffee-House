@@ -139,7 +139,7 @@ div#mid-main.main.col-sm-4 {
 
 #beans-header {
     height: var(--header-height);
-    background-image: url("Images/beans2RESIZE.jpg");
+    background-image: url("http://res.cloudinary.com/yyy32pf/image/upload/q_auto:low/v1522539178/beans2RESIZE.jpg");
     background-size: cover;
     position: fixed;
 }
@@ -154,7 +154,7 @@ div#mid-main.main.col-sm-4 {
 }
 
 .bean-background {
-    background-image: url("Images/farm.jpg");
+    background-image: url("http://res.cloudinary.com/yyy32pf/image/upload/q_auto:low/v1522539190/farm.jpg");
     background-size: cover;
     background-position: left;
     animation-name: background-shift;
@@ -425,13 +425,13 @@ table {
 }
 
 .menu-background {
-    background-image: url("Images/beans4.jpg");
+    background-image: url("http://res.cloudinary.com/yyy32pf/image/upload/q_auto:low/v1522539193/beans4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     min-width: 100vw;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
 }
 
