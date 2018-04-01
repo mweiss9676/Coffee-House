@@ -92,10 +92,6 @@ namespace Coffee.Controllers
 
             ViewBag.Cart = cart;
 
-            //int[] cartIds = GetCartIds(cart);
-
-            //ViewBag.CartIds = cartIds;
-
             return View("Beans", db.Beans);
         }
 
@@ -103,18 +99,6 @@ namespace Coffee.Controllers
         {
             return View("People");
         }
-
-        //private int[] GetCartIds(IList<Bean> cart)
-        //{
-        //    int[] cartIds = new int[cart.Count];
-
-        //    for (int i = 0; i < cart.Count; i++)
-        //    {
-        //        cartIds[i] = cart[i].ID;
-        //    }
-
-        //    return cartIds;
-        //}
 
         [HttpGet]
         public string GetIds()

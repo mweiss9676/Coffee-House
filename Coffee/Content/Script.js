@@ -4,20 +4,6 @@ var count = 0;
 
 $(window).on("load", function () {
 
-    var getIds = 'http://' + window.location.host + '/Home/GetIds';
-
-    $.when(
-        $.get(getIds, function (data) {
-            ids = JSON.parse(data);
-        })
-    ).then(function (data) {
-        $('#carts').html(data);
-        UpdateCount();
-        if (count > 0) {
-            ShowShoppingCart();
-        }
-    });
-
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
         $(this).css({
@@ -66,8 +52,8 @@ function UpdateIds(thisId, addRemove) {
 
     ).then(function (data) {
 
-        console.log(data);
         $('#carts').html(data[0]);
+
         UpdateCount();
         if (count > 0) {
             ShowShoppingCart();
