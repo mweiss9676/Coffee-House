@@ -255,6 +255,14 @@ div#mid-main.main.col-sm-4 {
     outline: none;
 }
 
+.add-to-cart:active, .remove-from-cart:active {
+    color: pink;
+    -webkit-transform: scale(1.50);
+    -moz-transform: scale(1.50);
+    -o-transform: scale(1.50);
+    transform: scale(1.50);
+}
+
 .bean-price {
     position: absolute;
     bottom: 1rem;
