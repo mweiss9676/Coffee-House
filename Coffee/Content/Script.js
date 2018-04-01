@@ -2,13 +2,21 @@
 var count = 0;
 
 
-$(document).ready(function () {
-    UpdateIds();
-});
-
-
-
 $(window).on("load", function () {
+
+    var getIds = 'http://' + window.location.host + '/Home/GetIds';
+
+    $.when(
+        $.get(getIds, function (data) {
+            ids = JSON.parse(data);
+        })
+    ).then(function (data) {
+        $('#carts').html(data);
+        UpdateCount();
+        if (count > 0) {
+            ShowShoppingCart();
+        }
+    });
 
     $('.bean-info-box').hover(function () {
         $(this).addClass('transition');
@@ -28,47 +36,50 @@ $(window).on("load", function () {
 
 
     $('.add-to-cart').click(function () {
-        $('.submit-value').val("add");
-        ShowShoppingCart();
+
+        var thisId = Number($(this).siblings('.itemId').val());
+
+        UpdateIds(thisId, "add");
+
     });
 
     $('.remove-from-cart').click(function () {
-        UpdateIds();
-        $('.submit-value').val("remove");
+
+        var thisId = Number($(this).siblings('.itemId').val());
+
+        UpdateIds(thisId, "remove");
+
     });
 });
 
+function UpdateIds(thisId, addRemove) {
 
-function ShowShoppingCart() {
-    $('#carts').addClass('visible');
-}
+    var getIds = 'http://' + window.location.host + '/Home/GetIds';
+    var updateCart = 'http://' + window.location.host + '/Home/UpdateCart';
 
-function HideShoppingCart() {
-    $('#carts').removeClass('visible');
-}
+    $.when(
+        $.post(updateCart, { beanId: thisId, addAmount: addRemove }),
 
-function UpdateIds() {
-    var ourRequest = new XMLHttpRequest();
-    //var host = 'http://localhost:50031/Home/GetIds'
-    var host = 'http://' + window.location.host + '/Home/GetIds';
-    ourRequest.open('GET', host);
-    ourRequest.onload = function () {
-        ids = JSON.parse(ourRequest.responseText);
+        $.get(getIds, function (data) {
+            ids = JSON.parse(data);
+        })
+
+    ).then(function (data) {
+
+        console.log(data);
+        $('#carts').html(data[0]);
         UpdateCount();
-        if (count > 1) {
+        if (count > 0) {
             ShowShoppingCart();
         } else {
             HideShoppingCart();
         }
-        console.log(ourRequest.responseText);
-    };
-    ourRequest.send();
+    });
 }
 
 function UpdateCount() {
     count = ids.length;
 }
-
 
 $(window).scroll(function () {
     let scrollPixels = parseInt($(window).scrollTop());
@@ -92,6 +103,15 @@ $(window).scroll(function () {
         $('#brand').removeClass('title-flip');
     }
 });
+
+function ShowShoppingCart() {
+    $('#carts').addClass('visible');
+}
+
+function HideShoppingCart() {
+    $('#carts').removeClass('visible');
+}
+
 
 
 

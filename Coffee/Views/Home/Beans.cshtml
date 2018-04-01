@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<Coffee.Bean>
-@using System.Web.Script.Serialization;
 
 @{
     var cart = ViewBag.Cart;
-    //var ids = ViewBag.cartIds;
 }
 
 <header id="beans-header">
@@ -29,18 +27,12 @@
                     <h5 class="bean-about hid">@item.Roast</h5>
                     <h5 class="bean-about hid">@item.Flavor</h5>
                     <h5 class="bean-about hid">@item.Description</h5>
-                    @using (Ajax.BeginForm("UpdateCart", "Home", new AjaxOptions
-                    {
-                        HttpMethod = "POST",
-                        UpdateTargetId = "carts"}))
-                    {
-                        <div class="buttons">
-                            <input class="itemId" type="hidden" name="beanId" value="@item.ID" />
-                            <input data-name="@item.Origin" class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
-                            <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
-                            <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
-                        </div>
-                    }
+                    <div class="buttons">
+                        <input class="itemId" type="hidden" name="beanId" value="@item.ID" />
+                        <input data-name="@item.Origin" class="remove-from-cart" type="submit" value="-" name="RemoveFromCart" />
+                        <input class="add-to-cart" type="submit" value="+" name="AddToCart" />
+                        <input class="submit-value" type="hidden" name="addAmount" value="nothing" />
+                    </div><!--END BUTTONS-->
                     <h4 class="bean-price">@item.Price.ToString("C") / lb.</h4>
                 </div><!--END BEAN-DESCRIPTION-->
             </div><!--END BEAN-INFO-BOX-->

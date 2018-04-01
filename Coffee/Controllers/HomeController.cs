@@ -52,7 +52,6 @@ namespace Coffee.Controllers
             }
 
             ViewBag.Total = GetTotal(cart);
-            //ViewBag.cartIds = GetCartIds(cart);
 
             return PartialView("ShoppingCart", cart);
         }
