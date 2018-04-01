@@ -46,11 +46,6 @@
 
 /*******************END ANIMATIONS****************************/
 
-
-/*********************************MEDIA QUERIES****************************************/
-
-/*********************************END MEDIA QUERIES****************************************/
-
 header {
     height: var(--header-height);
     width: 100vw;
@@ -143,6 +138,7 @@ div#mid-main.main.col-sm-4 {
 /*************************************BEANS****************************************/
 
 #beans-header {
+    grid-area: header;
     height: var(--header-height);
     background-image: url("http://res.cloudinary.com/yyy32pf/image/upload/q_auto:low/v1522539178/beans2RESIZE.jpg");
     background-size: cover;
@@ -171,6 +167,7 @@ div#mid-main.main.col-sm-4 {
 }
 
 .bean-description-page {
+    grid-area: body;
     width: 70vw;
     position: relative;
     left: 50%;
@@ -247,7 +244,8 @@ div#mid-main.main.col-sm-4 {
 
 .add-to-cart, .remove-from-cart {
     display: inline-block;
-    margin-left: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
     border: none !important;
     background: none !important;
     font-size: 3rem;
@@ -483,4 +481,33 @@ table {
 }
 
 /*********************************END MENU****************************************/
+
+
+/*********************************MEDIA QUERIES****************************************/
+
+@media (max-width: 450px) {
+
+    /**************BEANS**************/
+
+    .bean-description-page {
+        left: 0;
+        width: 100vw;
+        transform: translateX(0);
+        margin-top: 150px;
+    }
+
+    .bean-info-box {
+        width: 98vw;
+        margin-left: 0 !important;
+    }
+
+    .bean-description {
+        width: 100vw !important;
+    }
+
+
+    /**********END BEANS**************/
+}
+
+/*********************************END MEDIA QUERIES****************************************/
 
